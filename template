@@ -1,0 +1,24 @@
+# Template file for 'alsa-scarlett-gui'
+pkgname=alsa-scarlett-gui
+version=0.5.1
+revision=1
+archs="x86_64"
+hostmakedepends="gtk4-devel pkg-config alsa-lib-devel cairo"
+short_desc="Alsa-scarlett-gui Gtk4 GUI for ALSA controls Focusrite USB Drivers"
+maintainer="JuanMa <numblinux@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/geoffreybennett/alsa-scarlett-gui"
+distfiles="https://github.com/geoffreybennett/alsa-scarlett-gui/archive/refs/tags/${version}.tar.gz"
+checksum=c94b53fa5c7bf9ffd660d22b7e04a6a2b2b63db9668d159806623387a639c644
+
+
+do_build() {
+    cd src
+    make
+}
+
+
+do_install() {
+   vbin src/alsa-scarlett-gui
+}
+
